@@ -18,6 +18,7 @@ Login:
 Terminal screen has no authentication. SSH login authentication:
 
 username: root
+
 password: kaios
 
 64 Bit PXE Boot Instructions:
