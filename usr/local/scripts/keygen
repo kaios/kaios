@@ -1,0 +1,7 @@
+#!/bin/sh
+
+#Create new SSH keys each boot
+/sbin/ssh-keygen -b 1024 -t rsa -P '' -f /usr/local/etc/ssh_host_key
+/sbin/ssh-keygen -b 1024 -t rsa -P '' -f /usr/local/etc/ssh_host_rsa_key
+/sbin/ssh-keygen -b 1024 -t dsa -P '' -f /usr/local/etc/ssh_host_dsa_key
+/sbin/ssh-keygen -b 384 -t ecdsa -P '' -f /usr/local/etc/ssh_host_ecdsa_key

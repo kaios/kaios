@@ -1,0 +1,44 @@
+#!/bin/sh
+# KaiOS64 v1.1 init script
+# Writen by Shawn Rapaz October 31, 2014
+# Contact: shawnrapaz@gmail.com
+
+#Create all the symlinks to /bin/busybox
+/bin/busybox --install -s
+
+#Make tmpfs
+mkdir -v /dev/shm
+mount -vt tmpfs none /dev/shm
+
+#Disable kernel messages from popping onto the screen
+echo 0 > /proc/sys/kernel/printk
+
+#Start networking
+/sbin/ifup -a
+/sbin/udhcpc -s /usr/share/udhcpc/default.script
+
+#Create SSH Keys
+/usr/local/scripts/keygen
+
+#Start SSHD
+/sbin/sshd
+
+#Function for parsing command line options with "=" in them
+# get_opt("init=/sbin/init") will return "/sbin/init"
+get_opt() {
+        echo "$@" | cut -d "=" -f 2
+}
+
+echo 'Configuring filesystems...'
+# Mount /proc.
+[ -f /proc/cmdline ] || /bin/mount /proc
+
+# Remount rootfs rw.
+/bin/mount -o remount,rw /
+
+# Mount system devices from /etc/fstab.
+/bin/mount -a
+
+#Setting up TTY
+setsid sh -c 'exec sh </dev/tty1 >/dev/tty1 2>&1'
+exec sh
