@@ -26,6 +26,7 @@ Download kaiOS and extract to the following directory:
 tar zxvf kaio64PXE-v1.1.tar.gz -C /tftpboot
 
 Add the following to /tftpboot/pxelinux.cfg/default:
+
 timeout 20
 default KaiOS64v1.1
 label KaiOS64v1.1
