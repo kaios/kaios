@@ -29,6 +29,9 @@ Add the following to /tftpboot/pxelinux.cfg/default:
 
 timeout 20
 default KaiOS64v1.1
+
 label KaiOS64v1.1
+
 kernel kaios64/kernel/kaios1.0-stable
+
 append initrd=kaios64/initramfs/kaios.igz rw shell
