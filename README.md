@@ -3,6 +3,8 @@ kaios64 v1.1
 
 Small, customizable 64-bit Linux distribution aimed towards projects that need a small OS. Currently the initramfs and kernel are 14Mb.
 
+ATTENTION: Please note this is not the same KaiOS that is being used on mobile devices. The KaiOS that is found on mobile devices is a port of Firefox OS and has is unrelated to this project.
+
 Note:
 PXE boot support only at this moment.
 
