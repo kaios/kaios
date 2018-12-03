@@ -1,7 +1,7 @@
 kaios64 v1.1
 ============
 
-Small, customizable 64-bit Linux distribution aimed towards projects that need a small OS. Currently the initramfs and kernel are 14Mb.
+Small, customizable 64-bit Linux distribution aimed towards projects that need a small OS. Currently the initramfs and kernel are 14Mb. This project is the original KaiOS and has nothing to do with the phone operation system. Please do not contact me for any phone support. 
 
 Note:
 PXE boot support only at this moment.
